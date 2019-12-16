@@ -17,35 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/miles', function () {
-    $name = "Miles";
-    $title = "The Commander in Cheif";
-    $color = "Blue";
-    $image = "3ixth5.jpg";
+Route::get('/mike', 'TestController@mike');
 
-    return view("default", ['name' => $name, 'title' => $title, 'color' => $color, 'image' => $image]);
-});
+Route::get('/miles', 'TestController@miles');
 
+Route::get('/luis', 'TestController@luis');
 
-
-
-Route::get('/mike', function () {
-    $name = "Mike";
-    $title = "Sargent Derp";
-    $color = "Red";
-    $image = "3j57a7.jpg";
-
-    return view("default", ['name' => $name, 'title' => $title, 'color' => $color, 'image' => $image]);
-});
-
-Route::get('/bruh', function () {
-    $name = request('Bruh');
-    $title = request('the Bruh');
-    $color = request('Black');
-    $image = "3j57a7.jpg";
-
-    return view("default", ['name' => $name, 'title' => $title, 'color' => $color, 'image' => $image]);
-});
 
 Route::get('{post}', function ($post) {
     return view("not-found", [
