@@ -11,13 +11,17 @@
 |
 */
 
+// create a new route that will show just the one project ID
+// Proofs Controller 
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mike', 'TestController@mike');
+Route::get('/proofs', 'ProofsController@showall');
+
+Route::get('/proofs/{projectid}', 'ProofsController@showall');
 
 Route::get('/miles', 'TestController@miles');
 
